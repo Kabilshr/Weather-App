@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - ISS Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+</head>
+<body class="dark-mode">
+    <div class="background-animation"></div>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <div class="brand">
+                    <h2>SkyCast<span>ISS</span></h2>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="glass-btn">Back to Weather</a>
+                </div>
+            </div>
+        </header>
+
+        <main id="iss-display">
+            <div class="dashboard-grid full-width">
+                <!-- ISS Info Card -->
+                <div class="card main-card">
+                    <div class="location-info">
+                        <h1>ISS Location</h1>
+                        <p id="iss-timestamp">Updating...</p>
+                    </div>
+                    <div class="grid-container iss-coords">
+                        <div class="metric">
+                            <span class="label">Latitude</span>
+                            <span class="value" id="iss-lat">--</span>
+                        </div>
+                        <div class="metric">
+                            <span class="label">Longitude</span>
+                            <span class="value" id="iss-lon">--</span>
+                        </div>
+                    </div>
+                    <div class="iss-status-bar">
+                        Next update in <span id="iss-timer">30</span>s
+                    </div>
+                    <button id="refresh-iss" class="glass-btn refresh-btn">Sync Now</button>
+                </div>
+
+                <!-- ISS Map Card -->
+                <div class="card sidebar-card map-large">
+                    <div id="map-module" style="height: 100%;">
+                        <div id="iss-map" style="height: 100%; width: 100%; border-radius: 24px;"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/iss-script.js"></script>
+</body>
+</html>
